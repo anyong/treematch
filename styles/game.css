@@ -1,0 +1,94 @@
+label {
+    line-height: 2rem;
+}
+
+select {
+    height: 2em;
+}
+
+#game-board {
+    display: table;
+    margin: auto;
+}
+
+#game-controls {
+    float: left;
+}
+
+.start-button {
+    display: block;
+    margin: 1em auto;
+    height: 2em;
+    width: 100%;
+}
+
+.namecard {
+    width: 200px;
+    height: 250px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.namecard--flipped .namecard-contents{
+    transform: rotateY(180deg);
+}
+
+.namecard--mismatch {
+    animation: 1s 1s shake ease-in-out;
+}
+
+.namecard--found {
+    background: #76ff03;
+    opacity: 50%;
+    transition: all 1s 1s ease-in;
+}
+
+.namecard-contents {
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.namecard-front,
+.namecard-back {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 250px;
+}
+
+.namecard-front:hover,
+.namecard-back:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.namecard-back {
+    z-index: 2;
+}
+
+.namecard-front {
+    transform: rotateY(180deg);
+}
+
+.namecard img {
+    width: 200px;
+    height: auto;
+}
+
+.namecard p {
+    text-align: center;
+    font-weight: 700;
+}
+
+@keyframes shake {
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
